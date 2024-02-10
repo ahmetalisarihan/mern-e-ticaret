@@ -10,6 +10,12 @@ const allProducts = async (req, res) => {
     res.status(200).json({ products });
 }
 
+const adminProducts = async (req, res, next) => {
+    const products = await Product.find();
+
+    res.status(200).json({ products });
+}
+
 const detailProducts = async (req, res) => {
     const product = await Product.findById(req.params.id);
 
@@ -128,4 +134,4 @@ const createReview = async (req, res, next) => {
     res.status(200).json({ message: 'Review added' });
 }
 
-module.exports = { allProducts, detailProducts, createProduct, deleteProduct, updateProduct, createReview};
+module.exports = { allProducts, detailProducts, createProduct, deleteProduct, updateProduct, createReview, adminProducts};
