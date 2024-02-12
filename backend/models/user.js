@@ -30,6 +30,8 @@ const userSchema = new mongoose.Schema({
         default: "user",
         required: true
     },
+    resetPasswordToken: String,
+    resetPasswordExpire: Date,
     // cart: {
     //     type: Array,
     //     default: []

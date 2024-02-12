@@ -46,6 +46,7 @@ const createProduct = async (req, res, next) => {
         });
     }
     req.body.images = allImages;
+    req.body.user = req.user._id;
 
     const product = await Product.create(req.body);
 
